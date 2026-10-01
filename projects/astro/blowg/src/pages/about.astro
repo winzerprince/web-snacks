@@ -1,4 +1,14 @@
 ---
+const author = {
+  first_name: "Winzer",
+  last_name: "Prince",
+  Occupation: "Writter"
+};
+
+const skills = ["Writting", "Reading"];
+const title = "About";
+
+const happy = true;
 
 ---
 
@@ -9,7 +19,7 @@
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>About</title>
+    <title>{title}</title>
 	</head>
 	<body>
 		<h1>About</h1>
@@ -20,5 +30,10 @@
         <li><a href="/about">About</a></li>
       </ul>
     </nav>
+
+  <p>Hi my name is {author.first_name} {author.last_name}</p>
+  <h3>Skills</h3>
+    {skills.map(skill => <li>{skill}</li>)}
+  {happy && <p>I feel happy today</p>}
 	</body>
 </html>
